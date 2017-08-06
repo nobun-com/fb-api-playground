@@ -20,12 +20,22 @@ public class PlaygroundRestController extends BaseController {
 	@Resource
 	private PlaygroundService playgroundService;
 	
-	@RequestMapping( value="/ping/{str}",
+	@RequestMapping( value="/ping",
 			method = RequestMethod.GET,
 			produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
 	@ResponseBody
-	public String ping(@PathVariable("str") Long str) {
+	public String ping() {
 		return playgroundService.ping();
+	}
+	
+	@RequestMapping( value="/connect/{token}",
+			method = RequestMethod.GET,
+			produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+	@ResponseBody
+	public String connect(@PathVariable("token") String token) {
+		return HttpStatus.OK.toString();
+		//return playgroundService.connect(token);
 	}
 }
