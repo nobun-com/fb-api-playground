@@ -5,37 +5,27 @@ import javax.annotation.Resource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.fb.api.playground.controller.BaseController;
-import com.fb.api.playground.service.PlaygroundService;
+import com.fb.api.playground.service.ReportingService;
 
 @Controller
-public class PlaygroundRestController extends BaseController {
+public class ReportingRestController extends BaseController {
 
 	@Resource
-	private PlaygroundService playgroundService;
+	private ReportingService reportingService;
 	
-	@RequestMapping(value="/ping",
+	@RequestMapping(value = "/get-campaign-report",
 			method = RequestMethod.GET,
 			produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
 	@ResponseBody
-	public String ping() {
-		return playgroundService.ping();
+	public String getCampaignReport() {
+		return reportingService.getCampaignReport();
 	}
-	
-	@RequestMapping(value="/connect/{token}",
-			method = RequestMethod.GET,
-			produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseStatus(HttpStatus.OK)
-	@ResponseBody
-	public String connect(@PathVariable("token") String token) {
-		return HttpStatus.OK.toString();
-		//return playgroundService.connect(token);
-	}
+
 }

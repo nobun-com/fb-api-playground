@@ -27,5 +27,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="lib/facebook-java-ads-sdk-2.9.0.jar" sourcepath="/Users/keithlei/_Sourcecode/nobun/fb-api-playground_master/lib/facebook-java-ads-sdk-master.zip"/>
+	<classpathentry kind="lib" path="lib/gson-2.5.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
