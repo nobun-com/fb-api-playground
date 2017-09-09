@@ -38,4 +38,13 @@ public class PlaygroundRestController extends BaseController {
 		return HttpStatus.OK.toString();
 		//return playgroundService.connect(token);
 	}
+	
+	@RequestMapping(value="/get-account-data",
+			method = RequestMethod.GET,
+			produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+	@ResponseBody
+	public String getAccountData() {
+		return playgroundService.getAccountData();
+	}
 }

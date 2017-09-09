@@ -6,8 +6,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class FbApiAppSettings {
 
-	@Value("${fb.api.sandbox.account.id}")
-	private String sandboxAccountId = "";
+	@Value("${fb.api.ad.account.id}")
+	private String adAccountId = "";
 	
 	@Value("${fb.api.access.token}")
 	private String accessToken = "";
@@ -15,8 +15,8 @@ public class FbApiAppSettings {
 	@Value("${fb.api.app.secret}")
 	private String appSecret = "";
 
-	public String getSandboxAccountId() {
-		return sandboxAccountId;
+	public String getAdAccountId() {
+		return adAccountId;
 	}
 
 	public String getAccessToken() {

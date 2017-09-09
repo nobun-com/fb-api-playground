@@ -4,4 +4,6 @@ public interface PlaygroundService {
 
 	String ping();
 	
+	String getAccountData();
+	
 }
